@@ -7,18 +7,6 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnPlus"
-        android:text="+"
-        android:textSize="20dp"
-        android:layout_gravity="right"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"></Button>
-
-    <ImageView
-        android:id="@+id/imgSelect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ImageView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"

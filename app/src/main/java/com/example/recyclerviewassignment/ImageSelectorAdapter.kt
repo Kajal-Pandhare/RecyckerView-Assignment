@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -17,19 +18,15 @@ RecyclerView.Adapter<ImageSelectorAdapter.ImageViewHolder>(){
        fun onImageListener(position: Int,imageSelect: ImageSelect,view: View)
     }
     var onImageClickListener : OnImageClickListener? = null
-    var onItemClick : ((ImageSelect)->Unit)? = null
-    inner class ImageViewHolder(view: View): RecyclerView.ViewHolder(view){
-        val image : ImageView
-        val txtTitle : TextView
-       // val btnSave : Button
 
+    inner class ImageViewHolder(view: View): RecyclerView.ViewHolder(view){
+       val image : ImageView
+       val edtUserName : TextView
+       val edtAddress : TextView
         init {
             image = view.findViewById(R.id.img1)
-            txtTitle = view.findViewById(R.id.txtTitle)
-            //btnSave = view.findViewById(R.id.btnSave)
-            itemView.setOnClickListener {
-                Toast.makeText(it.context,"My action:${position} is clicked",Toast.LENGTH_SHORT).show()
-            }
+            edtUserName = view.findViewById(R.id.edtUserName)
+            edtAddress = view.findViewById(R.id.edtAddress)
         }
     }
 
@@ -37,15 +34,16 @@ RecyclerView.Adapter<ImageSelectorAdapter.ImageViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.activity_main2,null)
+        val view = layoutInflater.inflate(R.layout.activity_item_select,null)
 
         return ImageViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        val imagelist = imageList[position]
-        holder.image.setImageResource(imagelist.image)
-        holder.txtTitle.text = imagelist.title
+
+        holder.image.setImageResource(imageList[position].image)
+        holder.edtUserName.text = imageList[position].userName
+        holder.edtAddress.text = imageList[position].address
 
     }
 }
