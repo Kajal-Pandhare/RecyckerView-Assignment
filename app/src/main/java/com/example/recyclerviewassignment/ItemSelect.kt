@@ -26,7 +26,7 @@ class ItemSelect : AppCompatActivity() {
     private var selectedImage : Int = 0
 
     private lateinit var userName : String
-    private lateinit var Address : String
+    private lateinit var address : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +36,12 @@ class ItemSelect : AppCompatActivity() {
 
         btnSave.setOnClickListener {
             userName = edtuserName.text.toString()
-            Address = edtAddress.text.toString()
+            address = edtAddress.text.toString()
 
             val intent = Intent()
 
             intent.putExtra("userName", userName)
-            intent.putExtra("Address", Address)
+            intent.putExtra("address", address)
             intent.putExtra("selectedImage",selectedImage)
 
             setResult(1, intent)
@@ -66,24 +66,31 @@ class ItemSelect : AppCompatActivity() {
 
             image1.setOnClickListener {
                  selectedImage = R.drawable.image1
-                image1.setBackgroundColor(Color.parseColor("#4CAF50"))
+                    image1.setBackgroundColor(Color.parseColor("#4CAF50"))
+
                 Toast.makeText(this, "Image1 clicked", Toast.LENGTH_SHORT).show()
             }
             image2.setOnClickListener{
                  selectedImage = R.drawable.image2
+                image2.setBackgroundColor(Color.parseColor("#FF5722"))
                 Toast.makeText(this,"Image2 is clicked",Toast.LENGTH_SHORT).show()
             }
             image3.setOnClickListener{
+                image3.setBackgroundColor(Color.parseColor("#009688"))
                 selectedImage = R.drawable.image3
             }
             image4.setOnClickListener{
+                image4.setBackgroundColor(Color.parseColor("#FF9800"))
             selectedImage = R.drawable.image4
         }
             image5.setOnClickListener{
+
                 selectedImage = R.drawable.image5
+                image5.setBackgroundColor(Color.parseColor("#2196F3"))
             }
             image6.setOnClickListener{
                 selectedImage = R.drawable.image6
+                image6.setBackgroundColor(Color.parseColor("#673AB"))
             }
     }
 

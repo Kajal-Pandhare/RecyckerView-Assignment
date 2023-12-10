@@ -70,6 +70,7 @@
     <EditText
         android:id="@+id/edtUserName"
         android:layout_margin="5dp"
+        android:hint="Enter Name"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
@@ -77,6 +78,7 @@
     <EditText
         android:id="@+id/edtAddress"
         android:layout_margin="5dp"
+        android:hint="Enter Address"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>

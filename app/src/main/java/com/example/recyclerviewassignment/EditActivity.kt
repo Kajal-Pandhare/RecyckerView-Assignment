@@ -38,7 +38,7 @@ class EditActivity:AppCompatActivity() {
         initListener()
 
         userName = intent.getStringExtra("userName").toString()
-        Address = intent.getStringExtra("address").toString()
+        Address = intent.getStringExtra("Address").toString()
 
         edtuserName.setText(userName)
         edtAddress.setText(Address)
@@ -71,22 +71,28 @@ class EditActivity:AppCompatActivity() {
     }
     private fun initListener(){
         image1.setOnClickListener {
+            image1.setBackgroundColor(Color.parseColor("#4CAF50"))
             selectedImage = R.drawable.image1
         }
         image2.setOnClickListener{
             selectedImage = R.drawable.image2
+            image2.setBackgroundColor(Color.parseColor("#FF5722"))
         }
         image3.setOnClickListener{
             selectedImage = R.drawable.image3
+            image3.setBackgroundColor(Color.parseColor("#009688"))
         }
         image4.setOnClickListener{
             selectedImage = R.drawable.image4
+            image2.setBackgroundColor(Color.parseColor("#FF9800"))
         }
         image5.setOnClickListener{
             selectedImage = R.drawable.image5
+            image5.setBackgroundColor(Color.parseColor("#2196F3"))
         }
         image6.setOnClickListener{
             selectedImage = R.drawable.image6
+            image6.setBackgroundColor(Color.parseColor("#673AB"))
         }
     }
 

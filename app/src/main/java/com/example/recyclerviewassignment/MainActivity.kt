@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == 1 && resultCode == 1) {
             username = data?.getStringExtra("userName").toString()
-            address = data?.getStringExtra("Address").toString()
+            address = data?.getStringExtra("address").toString()
             selectedImage = data?.getIntExtra("selectedImage", 0)!!.toInt()
 
             imageList.add(
@@ -111,11 +111,12 @@ class MainActivity : AppCompatActivity() {
                 username = data?.getStringExtra("userName").toString()
                 address = data?.getStringExtra("Address").toString()
                 selectedImage = data?.getIntExtra("detailImage", 0).toString().toInt()
-            }
+
                 if (position != null) {
                    imageList[position] = ImageSelect(selectedImage,username,address)
                     imageSelectorAdapter.notifyItemChanged(position)
                 }
+            }
         }
         if (requestCode == 2 && resultCode == 4){
             val position = data?.getIntExtra("position",-1)

@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("DEPRECATION")
@@ -56,6 +57,25 @@ class DetailActivity:AppCompatActivity() {
                 startActivityForResult(intent,3)
                 return true
             }
+            R.id.editDelete -> {
+                val builder = AlertDialog.Builder(this)
+                builder.setMessage("Are you sure you want to delete the item")
+                builder.setPositiveButton("yes"){
+                    dialog,id ->
+                    val intent = Intent()
+                    intent.putExtra("position",position)
+                    setResult(4,intent)
+                    finish()
+                }
+                builder.setNegativeButton("No"){
+                    dialog,id ->
+                    dialog.dismiss()
+                }
+                val alert = builder.create()
+                alert.show()
+
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -65,12 +85,13 @@ class DetailActivity:AppCompatActivity() {
 
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 3 && resultCode == 4) {
+        if (requestCode == 3 && resultCode == 3) {
+
             position = data?.getIntExtra("position", -1)!!
             if (position != -1) {
                 userName = data?.getStringExtra("userName").toString()
                 Address = data?.getStringExtra("Address").toString()
-                detailImage = data?.getIntExtra("detailImage", 0).toString().toInt()
+                detailImage = data?.getIntExtra("selectedImage", 0).toString().toInt()
 
                 edtuserName.setText(userName)
                 edtAddress.setText(Address)

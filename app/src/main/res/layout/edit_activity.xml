@@ -67,16 +67,18 @@
     <EditText
         android:id="@+id/editUserName"
         android:layout_margin="5dp"
-        android:hint="UserName"
-        android:padding="10dp"
+        android:hint="Enter Name"
+        android:padding="5dp"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
 
     <EditText
-        android:hint="Address"
+        android:hint="Enter Address"
         android:id="@+id/editAddress"
+        android:textSize="20sp"
         android:layout_margin="5dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
 
@@ -84,7 +86,7 @@
         android:id="@+id/buttonSave"
         android:text="Save"
         android:layout_gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_width="120dp"
         android:layout_height="wrap_content"></Button>
 
