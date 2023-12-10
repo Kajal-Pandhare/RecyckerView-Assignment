@@ -12,24 +12,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecyclerViewAssignment"
         tools:targetApi="31">
-        <activity
-            android:name=".ItemSelect"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".ImageSelector"
-            android:exported="false" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".ItemSelect"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".EditActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
